@@ -1,0 +1,48 @@
+<div class="calc-page">
+    <div class="card shadow calc-card-theme-dark">
+
+        <div class="card-body">
+            <!-- Heading -->
+            <h3 class="text-center mb-4 text-white">Calculator</h3>
+            <!-- Template Driven Form (TDF) -->
+            <form #calcForm="ngForm">
+
+                <input 
+                    #calcDisplay
+                    type="text"
+                    class="form-control tex-end mb-3 calc-display-theme-dark text-end"
+                    name="display"
+                    [(ngModel)]="display"
+                    [style.font-size]="getFontSize()"
+                    readonly>
+
+
+                <!--Table with buttons control statments *ngFor-->
+                <table class="table text-center mb-0 calc-table-theme-dark">
+
+                    <tr *ngFor="let row of [0,4,8,12,16]">
+                        <td *ngFor="let btn of buttons.slice(row, row+4)">
+                            <button
+                            type="button" 
+                            class="btn calc-btn-theme-dark font-strength"
+                            [ngClass]="{
+                                'btn-number': btn !== '' && !['+', '-', '*', '/', '=', 'C'].includes(btn),
+                                'btn-operator': ['+', '-', '*', '/', '=', 'C', '%', '⌫'].includes(btn),
+                                'btn-clear': btn === 'C',
+                                'btn-result': btn === '=',
+                                'btn-dis': btn === ''
+                            }"
+                            (click)="onButtonClick(btn)">
+                            <span class="btn-label">
+                                {{btn}}
+                            </span>
+
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+    </div>
+</div>
