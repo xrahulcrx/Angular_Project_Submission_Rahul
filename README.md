@@ -33,7 +33,7 @@ Dark theme calculator UI
 Software & Tools Used
 
 ```
-Tool	      Purpose
+##Tool	      ##Purpose
 Node.js	      JavaScript runtime
 Angular CLI	  Project scaffolding & build
 Angular       Application framework
