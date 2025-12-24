@@ -28,7 +28,6 @@ export class CalculatorComponent {
 
   onButtonClick(value: string){
 
-
     //array for operators and spliting to get the last char of the values using regex
     const listOperators = ['+','-','*','/','%'];
     const isOperator = listOperators.includes(value);
